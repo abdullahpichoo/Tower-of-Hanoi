@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.block-info {
+  background-color: aqua;
+}
+.add-block {
+  background-color: burlywood;
+}
+.remove-block {
+  background-color: burlywood;
+}
+
+.moves-info {
+  background-color: aquamarine;
+}
+.undo-move {
+  background-color: antiquewhite;
+}
+.redo-move {
+  background-color: antiquewhite;
+}
+.timer {
+  background-color: burlywood;
+}
+
+.block {
+  background-color: aliceblue;
+  width: 60px;
+  height: 7%;
+  padding: 5px;
+  margin: 2px;
+
+  cursor: move;
+  text-align: center;
+}
+.block.dragging {
+  background-color: rgb(140, 176, 207);
+  opacity: 0.5;
+}
+.towers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2%;
+}
+.tower {
+  background-color: darkgoldenrod;
+  height: 400px;
+  border: 2px black;
+  outline-style: solid;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* .rod {
+  width: 5%;
+  height: 90%;
+  background-color: firebrick;
+  border: 1px black;
+} */
