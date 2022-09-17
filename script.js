@@ -7,7 +7,7 @@ var add_block = document.getElementById("add");
 var remove_block = document.getElementById("remove");
 var twr = document.getElementById("twr1");
 
-var min_blocks = 4;
+var min_blocks = 3;
 var max_blocks = 6;
 var current_block = min_blocks;
 let moves = [];
@@ -35,7 +35,8 @@ add_block.onclick = function () {
 };
 remove_block.onclick = function () {
   if (current_block > 0) {
-    var b = document.getElementById("block" + current_block);
+    console.log("block" + (current_block - 1));
+    const b = document.getElementById("block" + (current_block - 1));
     twr.removeChild(b);
     current_block -= 1;
   }
@@ -54,22 +55,20 @@ undo.onclick = function () {
 };
 redo.onclick = function () {
   if (moves.length <= total_moves) {
+    console.log(`current move before redo: ${current_move_i}`);
     const curr = moves[current_move_i];
     const curr_b = document.getElementById(curr.b_id);
     document.getElementById(curr.to).appendChild(curr_b);
     current_move_i =
       current_move_i < total_moves - 1 ? (current_move_i += 1) : current_move_i;
-    console.log(current_move_i);
+    console.log(`current move after redo: ${current_move_i}`);
   }
 };
 
 blocks.forEach((draggable) => {
+  console.log(blocks.length);
   draggable.addEventListener("dragstart", () => {
     console.log("dragged");
-    // current_move.b_id = draggable.id;
-    // current_move.from = draggable.parentElement.id;
-    // console.log(draggable.id);
-    // console.log(draggable.parentElement.id);
     moves.push({
       b_id: draggable.id,
       from: draggable.parentElement.id,
@@ -80,8 +79,6 @@ blocks.forEach((draggable) => {
   draggable.addEventListener("dragend", () => {
     draggable.classList.remove("dragging");
     moves[moves.length - 1].to = draggable.parentElement.id;
-    //current_move.to = draggable.parentElement.id;
-    //moves.push(current_move);
     total_moves += 1;
     current_move_i = total_moves - 1;
     console.log(current_move_i);
@@ -94,7 +91,6 @@ towers.forEach((tower) => {
     e.preventDefault();
     const selected_block = document.querySelector(".dragging");
     const _id = current_move.b_id;
-    //console.log(_id);
     const b = document.getElementById(_id);
     // Yaha pr BONUS wali condition aye gi
     tower.appendChild(selected_block);
