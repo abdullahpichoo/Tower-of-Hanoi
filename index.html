@@ -12,7 +12,7 @@
     <h1>Tower of Hanoi</h1>
     <div class="header">
       <div class="block-info">
-        <h3>Blocks: 69</h3>
+        <h3 id="block-count">Blocks:</h3>
         <img src="./arrow-up-s.svg" alt="Up" class="add-block" id="add" />
         <img
           src="./arrow-down-s.svg"
@@ -22,7 +22,7 @@
         />
       </div>
       <div class="moves-info">
-        <h3>Moves: 12</h3>
+        <h3 id="moves-count">Moves:</h3>
         <img src="./arrow-go-back.svg" alt="Undo" class="undo-move" id="undo" />
         <img
           src="./arrow-go-forward.svg"
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="towers-container">
+    <!-- <div class="towers-container">
       <div class="tower" id="twr1">
         Tower
         <div class="block" draggable="true" id="block1">1</div>
@@ -46,7 +46,52 @@
       </div>
       <div class="tower" id="twr2">Tower</div>
       <div class="tower" id="twr3">Tower</div>
+    </div> -->
+
+    <div class="towers-container">
+      <div
+        class="tower"
+        id="twr1"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <div
+          class="block"
+          draggable="true"
+          id="block1"
+          ondragstart="drag(event)"
+        >
+          1
+        </div>
+        <div
+          class="block"
+          draggable="true"
+          id="block2"
+          ondragstart="drag(event)"
+        >
+          2
+        </div>
+        <div
+          class="block"
+          draggable="true"
+          id="block3"
+          ondragstart="drag(event)"
+        >
+          3
+        </div>
+      </div>
+      <div
+        class="tower"
+        id="twr2"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      ></div>
+      <div
+        class="tower"
+        id="twr3"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      ></div>
     </div>
-    <div class="test-div" id="test"></div>
   </body>
 </html>
