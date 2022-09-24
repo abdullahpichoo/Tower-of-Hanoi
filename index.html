@@ -6,92 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tower of Hanoi</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Cinzel|Poppins"
+    />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Tower of Hanoi</h1>
-    <div class="header">
-      <div class="block-info">
-        <h3 id="block-count">Blocks:</h3>
-        <img src="./arrow-up-s.svg" alt="Up" class="add-block" id="add" />
-        <img
-          src="./arrow-down-s.svg"
-          alt="Down"
-          class="remove-block"
-          id="remove"
-        />
-      </div>
-      <div class="moves-info">
-        <h3 id="moves-count">Moves:</h3>
-        <img src="./arrow-go-back.svg" alt="Undo" class="undo-move" id="undo" />
-        <img
-          src="./arrow-go-forward.svg"
-          alt="Redo"
-          class="redo-move"
-          id="redo"
-        />
-      </div>
-      <div class="timer">
-        <h2>Remaining Time:</h2>
-        <div class="time-box">02:25</div>
-      </div>
-    </div>
+    <div class="bg-image">
+      <h1 class="tower-text">TOWER OF HANOI</h1>
+      <div class="header">
+        <div class="block-moves">
+          <div class="moves-info">
+            <h3 id="moves-count">Moves:</h3>
+            <button class="btn">
+              <img
+                src="./arrow-go-back.svg"
+                alt="Undo"
+                class="svg move"
+                id="undo"
+              />
+            </button>
+            <button class="btn">
+              <img
+                src="./arrow-go-forward.svg"
+                alt="Redo"
+                class="svg move"
+                id="redo"
+              />
+            </button>
+          </div>
+          <div class="block-info">
+            <h3 id="block-count">Blocks:</h3>
+            <button class="btn">
+              <img src="./arrow-up-s.svg" alt="Up" class="svg" id="add" />
+            </button>
+            <button class="btn">
+              <img
+                src="./arrow-down-s.svg"
+                alt="Down"
+                class="svg"
+                id="remove"
+              />
+            </button>
+          </div>
+        </div>
 
-    <!-- <div class="towers-container">
-      <div class="tower" id="twr1">
-        Tower
-        <div class="block" draggable="true" id="block1">1</div>
-        <div class="block" draggable="true" id="block2">2</div>
-        <div class="block" draggable="true" id="block3">3</div>
+        <div class="timer">
+          <h3>Timer</h3>
+          <div class="time-box" id="timer">00:00</div>
+        </div>
       </div>
-      <div class="tower" id="twr2">Tower</div>
-      <div class="tower" id="twr3">Tower</div>
-    </div> -->
 
-    <div class="towers-container">
-      <div
-        class="tower"
-        id="twr1"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      >
+      <div class="towers-container">
         <div
-          class="block"
-          draggable="true"
-          id="block1"
-          ondragstart="drag(event)"
+          class="tower"
+          id="twr1"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
         >
-          1
+          <!-- <div
+            class="block"
+            draggable="true"
+            id="block1"
+            ondragstart="drag(event)"
+          >
+            1
+          </div>
+          <div
+            class="block"
+            draggable="true"
+            id="block2"
+            ondragstart="drag(event)"
+          >
+            2
+          </div>
+          <div
+            class="block"
+            draggable="true"
+            id="block3"
+            ondragstart="drag(event)"
+          >
+            3
+          </div> -->
         </div>
         <div
-          class="block"
-          draggable="true"
-          id="block2"
-          ondragstart="drag(event)"
-        >
-          2
-        </div>
+          class="tower"
+          id="twr2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
         <div
-          class="block"
-          draggable="true"
-          id="block3"
-          ondragstart="drag(event)"
-        >
-          3
-        </div>
+          class="tower"
+          id="twr3"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
       </div>
-      <div
-        class="tower"
-        id="twr2"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      ></div>
-      <div
-        class="tower"
-        id="twr3"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      ></div>
     </div>
   </body>
 </html>

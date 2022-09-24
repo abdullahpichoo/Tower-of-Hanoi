@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.block-info {
+  background-color: brown;
+}
+.arrow-up {
+  background-color: aqua;
+}
+.arrow-down {
+  background-color: aqua;
+}
+.towers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2%;
+}
+.tower {
+  background-color: coral;
+  height: 400px;
+  border: 2px black;
+  outline: solid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tile {
+  background-color: pink;
+  width: 50px;
+  height: 5%;
+  border: 1px black;
+  outline: solid;
+
+  padding: 5px;
+  margin: 10px;
+
+  text-align: center;
+  cursor: move;
+}
+
+.dragging {
+  opacity: 0.3;
+  background-color: aqua;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Hanoi</title>
+    <link rel="stylesheet" href="tut.css" />
+    <script src="tut.js" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="block-info">
+        <h3 id="block-num">Blocks: 5</h3>
+        <img src="./arrow-up-s.svg" class="arrow-up" alt="UP" id="add" />
+        <img
+          src="./arrow-down-s.svg"
+          class="arrow-down"
+          alt="down"
+          id="remove"
+        />
+      </div>
+      <div class="moves">
+        <h3>moves: 221</h3>
+        <img src="./arrow-go-back.svg" alt="" />
+        <img src="./arrow-go-forward.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="towers-container">
+      <div
+        class="tower"
+        id="tw1"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <div class="tile" id="t1" draggable="true" ondragstart="drag(event)">
+          1
+        </div>
+        <div class="tile" id="t2" draggable="true" ondragstart="drag(event)">
+          2
+        </div>
+        <div class="tile" id="t3" draggable="true" ondragstart="drag(event)">
+          3
+        </div>
+      </div>
+      <div
+        class="tower"
+        id="tw2"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      ></div>
+      <div
+        class="tower"
+        id="tw3"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      ></div>
+    </div>
+  </body>
+</html>
