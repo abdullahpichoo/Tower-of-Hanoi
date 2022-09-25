@@ -21,6 +21,66 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+h1 {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: var(--off_white);
+  margin-bottom: 10px;
+  text-shadow: 0px 4px 9px rgba(0, 0, 0, 0.35);
+}
+.end-screen {
+  height: 90%;
+  width: 80%;
+  margin: 0% 10%;
+  margin-top: 4%;
+  position: fixed;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(127, 170, 185, 0.2) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  border: 1.53878px solid rgba(255, 253, 253, 0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 73px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  transition: cubic-bezier(0.71, 0.04, 0.4, 0.98) 0.3s;
+}
+@keyframes end {
+  from {
+    height: 2%;
+    width: 80%;
+  }
+  to {
+    height: 90%;
+    width: 80%;
+  }
+}
+.animate-end {
+  animation: end cubic-bezier(0.71, 0.04, 0.4, 0.98) 0.3s;
+}
+.restart {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--light_blue);
+  transition: cubic-bezier(0.71, 0.04, 0.4, 0.98) 0.15s;
+  cursor: pointer;
+}
+.restart:hover {
+  background-color: #1e3d58;
+  color: var(--off_white);
+  padding: 10px;
+  border-radius: 20px;
+  transition: cubic-bezier(0.71, 0.04, 0.4, 0.98) 0.15s;
+}
 .tower-text {
   font-family: "Cinzel";
   font-size: 45px;
@@ -44,6 +104,8 @@ h3 {
   justify-content: space-between;
   align-items: center;
   margin-top: 1%;
+  position: relative;
+  z-index: 0;
 }
 .block-moves {
   display: flex;
@@ -114,6 +176,8 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5%;
+  position: relative;
+  z-index: 0;
 }
 .tower {
   height: 350px;

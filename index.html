@@ -13,7 +13,11 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="bg-image">
+    <div class="bg-image" id="bg">
+      <!-- <div class="end-screen">
+        <h1>You Won</h1>
+        <div class="restart">Restart</div>
+      </div> -->
       <h1 class="tower-text">TOWER OF HANOI</h1>
       <div class="header">
         <div class="block-moves">
@@ -64,32 +68,7 @@
           id="twr1"
           ondrop="drop(event)"
           ondragover="allowDrop(event)"
-        >
-          <!-- <div
-            class="block"
-            draggable="true"
-            id="block1"
-            ondragstart="drag(event)"
-          >
-            1
-          </div>
-          <div
-            class="block"
-            draggable="true"
-            id="block2"
-            ondragstart="drag(event)"
-          >
-            2
-          </div>
-          <div
-            class="block"
-            draggable="true"
-            id="block3"
-            ondragstart="drag(event)"
-          >
-            3
-          </div> -->
-        </div>
+        ></div>
         <div
           class="tower"
           id="twr2"

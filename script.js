@@ -53,6 +53,23 @@ function createBlocks() {
     ).innerHTML = `Blocks: ${current_block}`;
   }
 }
+function createEndScreen(win = true) {
+  const state = win == true ? "You Won" : "Time's Up";
+  const container = document.createElement("div");
+  const text = document.createElement("h1");
+  text.innerText = state;
+  const restart = document.createElement("div");
+  restart.className = "restart";
+  restart.id = "restart";
+  restart.addEventListener("click", () => {
+    window.location.reload();
+  });
+  restart.innerText = "Restart";
+  container.appendChild(text);
+  container.appendChild(restart);
+  container.classList.add("end-screen", "animate-end");
+  document.getElementById("bg").prepend(container);
+}
 function countDownStart() {
   setInterval(() => {
     seconds -= 1;
@@ -60,10 +77,8 @@ function countDownStart() {
     if (seconds <= 0) {
       clearInterval(countDownStart);
       console.log("time up");
-      alert("Your Time is Up!! Please try again. Press [OK] to Continue");
+      createEndScreen(false);
       seconds = 200;
-      window.location.reload();
-      end_game = true;
     }
   }, 1000);
 }
@@ -76,9 +91,11 @@ function displayTime(sec) {
 }
 function checkWin(parent) {
   const blocks = parent.querySelectorAll(".block");
-  if (blocks.length == current_block) {
-    alert("You Won. Press [OK] to Continue");
-    window.location.reload();
+  if (
+    blocks.length == current_block &&
+    moves.length >= 2 ** current_block - 1
+  ) {
+    createEndScreen();
   }
 }
 function allowDrop(ev) {
